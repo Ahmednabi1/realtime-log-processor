@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  PRODUCER_PORT: "3001"
+  PRODUCER_KAFKA_BROKER: "kafka-svc:9092"
+  PRODUCER_KAFKA_TOPIC: "user-activity-logs"
+
+  PROCESSOR_PORT: "3002"
+  PROCESSOR_KAFKA_BROKER: "kafka-svc:9092"
+  PROCESSOR_KAFKA_TOPIC: "user-activity-logs"
+  PROCESSOR_KAFKA_GROUP_ID: "log-processor-group"
+  PROCESSOR_MONGO_URI: "mongodb://admin:password@mongo-svc:27017/log-database?authSource=admin"
